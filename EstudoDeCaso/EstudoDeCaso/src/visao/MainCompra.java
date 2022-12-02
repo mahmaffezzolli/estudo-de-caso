@@ -19,7 +19,6 @@ public class MainCompra {
 		FilmeDAO bancoFilmes = FilmeDAO.getInstancia();
 		SessaoDAO bancoSessao = SessaoDAO.getInstancia();
 
-
 		ArrayList<Filme> listaFilmes = bancoFilmes.listaFilmes();
 
 		Filme filme001 = new Filme();
@@ -48,54 +47,43 @@ public class MainCompra {
 		filme003.setCodFilme(003);
 
 		listaFilmes.add(filme003);
-		
+
 		ArrayList<Sessao> listaSessao = bancoSessao.listarSessao();
-				
+
 		Sessao sessao001A = new Sessao();
 
 		sessao001A.setFilme(filme001.getNomeFilme());
 		sessao001A.setNumeroSala(1);
 		sessao001A.setQuantIngressoDisponivel(30);
 		sessao001A.setCodSessao("001A");
-		
+
 		listaSessao.add(sessao001A);
-		
-		Sessao sessao001B = new Sessao();
 
-		sessao001B.setFilme(filme001.getNomeFilme());
-		sessao001B.setNumeroSala(2);
-		sessao001B.setQuantIngressoDisponivel(30);
-		sessao001B.setCodSessao("001B");
-		
-		listaSessao.add(sessao001B);
-		
-
-		
 
 		System.out.println("Seja bem vindo ao site de compra de ingresso da !");
 		System.out.println("=============================================");
 
 		while (opcaoSelecionada != 0) {
 
-			System.out.println("====OPCOES DISPONIVEIS====");
+			System.out.println("====OPÇÕES DISPONIVEIS====");
 			System.out.println("0 SAIR");
 			System.out.println("1 LISTAR FILMES");
-			System.out.println("2 VER SESSOES");
+			System.out.println("2 VER SESSÕES");
 			System.out.println("3 COMPRAR INGRESSO");
 			System.out.println("4 CANCELAR INGRESSO");
 			System.out.println("=============================================");
 
-			System.out.println("Opcao escolhida: ");
+			System.out.println("Escolha uma das opções a cima: ");
 			opcaoSelecionada = Integer.valueOf(leitura.nextLine());
 
 			switch (opcaoSelecionada) {
 			case 0: {
-				System.out.println("Até logo");
+				System.out.println("Até logo!");
 				break;
 			}
 
 			case 1: {
-				System.out.println("\nLista de filmes em cartaz: \n");
+				System.out.println("\nOs filmes em cartaz são: \n");
 
 				for (Filme filme : listaFilmes) {
 
@@ -106,11 +94,40 @@ public class MainCompra {
 
 			}
 			case 2: {
+				System.out.println("\nInforme o filme desejado: \n");
+
+				int f = 1;
+
+				for (Filme filme : listaFilmes) {
+
+					System.out.println("Filme " + f + ": " + filme.getNomeFilme());
+					f++;
+				}
+
+				System.out.println("Escolha uma das opções a cima: ");
+				Integer filmeEscolhido = Integer.valueOf(leitura.nextLine());
+
+				if (filmeEscolhido == 1) {
+
+					System.out.println("Sessao 001A : ");
+					
+					for (Filme filme : listaFilmes) {
+						System.out.println("Filme: " + filme.getNomeFilme());
+						System.out.println("Dia: " + filme.getDiaFilme());
+						System.out.println("Horario: " + filme.getHorarioFilme());
+					}
+					for (Sessao sessao : listaSessao) {
+						System.out.println("Sala: " + sessao.getNumeroSala());
+						System.out.println("Ingressos disponiveis: " + sessao.getQuantIngressoDisponivel());
+					}
+					
+				}
+
 				System.out.println("\nSessoes disponiveis: \n");
 
 				for (Sessao sessao : listaSessao) {
 
-					System.out.println(sessao.sessao001A());
+					// System.out.println(sessao.get);
 				}
 
 				System.out.println("\n=============================================\n");
