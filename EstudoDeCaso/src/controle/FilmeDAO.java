@@ -7,6 +7,7 @@ import modelo.IFilmeDAO;
 
 public class FilmeDAO implements IFilmeDAO {
 
+	public static final String System = null;
 	private static ArrayList<Filme> tabelaFilmes;
 	private static FilmeDAO instancia;
 
@@ -66,7 +67,9 @@ public class FilmeDAO implements IFilmeDAO {
 	// select all
 	@Override
 	public ArrayList<Filme> listaFilmes() {
-
+	
 		return tabelaFilmes;
 	}
+	
+	
 }

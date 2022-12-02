@@ -35,7 +35,7 @@ public class SessaoDAO implements ISessaoDAO{
 
 	// update
 	@Override
-	public boolean atualizar(Sessao s, int codSessao) {
+	public boolean atualizar(Sessao s, String codSessao) {
 
 		for (Sessao sessao : tabelaSessao) {
 
@@ -48,7 +48,7 @@ public class SessaoDAO implements ISessaoDAO{
 
 	// delete
 	@Override
-	public boolean excluir(Sessao s, int codSessao) {
+	public boolean excluir(Sessao s, String codSessao) {
 
 		for (Sessao sessao : tabelaSessao) {
 			if (sessao.getCodSessao() == codSessao) {

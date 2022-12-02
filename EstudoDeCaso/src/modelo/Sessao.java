@@ -2,26 +2,26 @@ package modelo;
 
 public class Sessao {
 
-    private Integer codSessao;
+    private String codSessao;
     private Integer numeroSala;
-    private Filme filme;
+    private String nomeFilme;
     private Integer quantIngressoDisponivel;
 
-    public Sessao(Integer codSessao, Integer numeroSala, Filme filme, Integer quantIngressoDisponivel) {
+    public Sessao(String codSessao, Integer numeroSala, String nomeFilme, Integer quantIngressoDisponivel) {
         this.codSessao = codSessao;
         this.numeroSala = numeroSala;
-        this.filme = filme;
+        this.nomeFilme = nomeFilme;
         this.quantIngressoDisponivel = quantIngressoDisponivel;
     }
 
     public Sessao() {
     }
 
-    public Integer getCodSessao() {
+    public String getCodSessao() {
         return codSessao;
     }
 
-    public void setCodSessao(Integer codSessao) {
+    public void setCodSessao(String codSessao) {
         this.codSessao = codSessao;
     }
 
@@ -33,12 +33,12 @@ public class Sessao {
         this.numeroSala = numeroSala;
     }
 
-    public Filme getFilme() {
-        return filme;
+    public String getFilme() {
+        return nomeFilme;
     }
 
-    public void setFilme(Filme filme) {
-        this.filme = filme;
+    public void setFilme(String string) {
+        this.nomeFilme = string;
     }
 
     public Integer getQuantIngressoDisponivel() {

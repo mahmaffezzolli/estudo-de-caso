@@ -1,19 +1,20 @@
 package modelo;
 
-import java.time.LocalDate;
-
 public class Filme {
 
 	private String nomeFilme;
-	private LocalDate horarioFilme;
+	private Integer horarioFilme;
 	private Integer codFilme;
-	private LocalDate diaFilme;
+	private Integer diaFilme;
 
-	public Filme(String nomeFilme, LocalDate horarioFilme, Integer codFilme, LocalDate diaFilme) {
+	public Filme(String nomeFilme, Integer horarioFilme, Integer codFilme, Integer diaFilme) {
 		this.nomeFilme = nomeFilme;
 		this.horarioFilme = horarioFilme;
 		this.codFilme = codFilme;
 		this.diaFilme = diaFilme;
+	}
+
+	public Filme() {
 	}
 
 	public Integer getCodFilme() {
@@ -24,11 +25,11 @@ public class Filme {
 		this.codFilme = codFilme;
 	}
 
-	public LocalDate getDiaFilme() {
+	public Integer getDiaFilme() {
 		return diaFilme;
 	}
 
-	public void setDiaFilme(LocalDate diaFilme) {
+	public void setDiaFilme(Integer diaFilme) {
 		this.diaFilme = diaFilme;
 	}
 
@@ -40,11 +41,11 @@ public class Filme {
 		this.nomeFilme = nomeFilme;
 	}
 
-	public LocalDate getHorarioFilme() {
+	public Integer getHorarioFilme() {
 		return horarioFilme;
 	}
 
-	public void setHorarioFilme(LocalDate horarioFilme) {
+	public void setHorarioFilme(Integer horarioFilme) {
 		this.horarioFilme = horarioFilme;
 	}
 }
