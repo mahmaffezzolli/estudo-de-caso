@@ -64,6 +64,7 @@ public class SessaoDAO implements ISessaoDAO{
 	// select all
 	@Override
 	public ArrayList<Sessao> listarSessao() {
+		
 		Sessao sessao001A = new Sessao();
 
 		sessao001A.setFilme("Clube da Luta");
