@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import modelo.ISessaoDAO;
 import modelo.Sessao;
+import controle.FilmeDAO;
 
 public class SessaoDAO implements ISessaoDAO{
 
@@ -63,6 +64,17 @@ public class SessaoDAO implements ISessaoDAO{
 	// select all
 	@Override
 	public ArrayList<Sessao> listarSessao() {
+		Sessao sessao001A = new Sessao();
+
+		sessao001A.setFilme("Clube da Luta");
+		sessao001A.setNumeroSala(1);
+		sessao001A.setQuantIngressoDisponivel(30);
+		sessao001A.setCodSessao("001A");
+		
+		tabelaSessao.add(sessao001A);
+		
+		
+		
 		return tabelaSessao;
 	}
 	
