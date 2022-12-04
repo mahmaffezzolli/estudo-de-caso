@@ -8,7 +8,7 @@ public interface IIngressoDAO {
 	
 	public boolean atualizar(Ingresso ingresso, int codIngresso);
 
-	public boolean excluir(Ingresso ingresso, int codIngresso);
+	public boolean excluir(int codIngresso);
 	
 	public ArrayList<Ingresso> listarIngressos();
 }

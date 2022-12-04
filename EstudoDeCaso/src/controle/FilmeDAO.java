@@ -14,13 +14,16 @@ public class FilmeDAO implements IFilmeDAO {
 	private FilmeDAO() {
 	}
 
-	public static FilmeDAO getInstancia() {
+	public static FilmeDAO getInstancia(int x) {
 
 		if (instancia == null) {
 			instancia = new FilmeDAO();
-			tabelaFilmes = new ArrayList<>();
-			
-			
+
+			if (x != 1) {
+				tabelaFilmes = new ArrayList<>();
+
+			}
+
 		}
 
 		return instancia;
@@ -67,7 +70,11 @@ public class FilmeDAO implements IFilmeDAO {
 	// select all
 	@Override
 	public ArrayList<Filme> listaFilmes() {
-	
+
+		return tabelaFilmes;
+	}
+
+	public void criarFilmes() {
 		Filme filme001 = new Filme();
 
 		filme001.setNomeFilme("Clube da Luta");
@@ -94,10 +101,6 @@ public class FilmeDAO implements IFilmeDAO {
 		filme003.setCodFilme(003);
 
 		tabelaFilmes.add(filme003);
-		
-		return tabelaFilmes;
 	}
-	
-	
-	
+
 }

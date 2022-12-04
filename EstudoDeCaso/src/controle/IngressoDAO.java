@@ -45,12 +45,10 @@ public class IngressoDAO implements IIngressoDAO {
 	}
 
 	@Override
-	public boolean excluir(Ingresso i, int codIngresso) {
+	public boolean excluir(int codIngresso) {
 		for (Ingresso ingresso : tabelaIngressos) {
-
-			if (ingresso.getCodIngresso() == codIngresso) {
+			if(ingresso.getCodIngresso() == codIngresso) {
 				tabelaIngressos.remove(ingresso);
-				return true;
 			}
 		}
 		return false;
