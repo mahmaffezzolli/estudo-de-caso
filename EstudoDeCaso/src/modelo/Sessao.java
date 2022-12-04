@@ -48,4 +48,6 @@ public class Sessao {
     public void setQuantIngressoDisponivel(Integer quantIngressoDisponivel) {
         this.quantIngressoDisponivel = quantIngressoDisponivel;
     }
+
+	
 }

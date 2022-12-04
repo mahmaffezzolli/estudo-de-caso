@@ -2,7 +2,7 @@
 
 public class Ingresso {
 
-    private Integer codIngresso;
+    private Integer codIngresso=0;
     private Sessao sessao;
     private Double valor;
     private String formaPagamento;

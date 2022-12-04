@@ -26,7 +26,7 @@ public class IngressoDAO implements IIngressoDAO {
 	@Override
 	public boolean inserir(Ingresso i) {
 		if (i != null) {
-			tabelaIngressos.add(i);
+			tabelaIngressos.add(i.getCodIngresso(),i);
 			return true;
 		}
 		return false;
@@ -58,7 +58,11 @@ public class IngressoDAO implements IIngressoDAO {
 
 	@Override
 	public ArrayList<Ingresso> listarIngressos() {
+		
+
 		return tabelaIngressos;
 	}
+	
+	
 
 }
