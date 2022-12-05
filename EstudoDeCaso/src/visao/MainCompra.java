@@ -28,33 +28,31 @@ public class MainCompra {
 		ArrayList<Sessao> listaSessao = bancoSessao.listarSessao();
 		ArrayList<Ingresso> listaIngresso = bancoIngresso.listarIngressos();
 
-		// deixar bonito
-
-		System.out.println("Seja bem vindo ao site de compra de ingresso da !");
-		System.out.println("============================================");
+		System.out.println("Seja bem vindo ao site de compra de ingresso da AGM cinemas!");
+		System.out.println("============================================\n");
 
 		while (opcaoSelecionada != 0) {
 
-			System.out.println("=============OPCOES DISPONIVEIS=============");
+			System.out.println("=============OPCOES DISPONIVEIS:=============\n");
 			System.out.println("0 SAIR");
 			System.out.println("1 LISTAR FILMES");
 			System.out.println("2 VER SESSOES");
 			System.out.println("3 COMPRAR INGRESSO");
 			System.out.println("4 CANCELAR INGRESSO");
-			System.out.println("============================================");
+			System.out.println("\n============================================");
 
-			System.out.println("Opcao escolhida: ");
+			System.out.println("\n- Selecione uma opcao: ");
 			opcaoSelecionada = Integer.valueOf(leitura.nextLine());
 
 			switch (opcaoSelecionada) {
 			case 0: {
-				System.out.println("Até logo"); // deixar bonito
+				System.out.println("Volte sempre!");
 
 				break;
 			}
 
 			case 1: {
-				System.out.println("\nLista de filmes em cartaz: \n");
+				System.out.println("\n Filmes em cartaz: \n");
 
 				for (Filme filme : listaFilmes) {
 
@@ -67,7 +65,7 @@ public class MainCompra {
 
 			}
 			case 2: {
-				System.out.println("\nInforme o filme desejado: \n");
+				System.out.println("\n Informe o filme desejado: \n");
 
 				int f = 1;
 
@@ -77,7 +75,7 @@ public class MainCompra {
 					f++;
 				}
 
-				System.out.println("\nEscolha uma das opcoes a cima: ");
+				System.out.println("\nEscolha uma das opcoes acima: ");
 				Integer filmeEscolhido = Integer.valueOf(leitura.nextLine());
 
 				Filme filme1 = new Filme();
@@ -100,8 +98,9 @@ public class MainCompra {
 						}
 
 						System.out.println("Sala: " + sessao.getNumeroSala());
-						System.out.println("Ingressos disponiveis: " + sessao.getQuantIngressoDisponivel());
-						System.out.println("Codigo sessao: " + sessao.getCodSessao());
+						System.out
+								.println("Quantidade de ingressos disponiveis: " + sessao.getQuantIngressoDisponivel());
+						System.out.println("Codigo da sessao: " + sessao.getCodSessao());
 
 					}
 				}
@@ -112,7 +111,7 @@ public class MainCompra {
 
 			}
 			case 3: {
-				System.out.println("Sessoes: "); // deixar bonito
+				System.out.println("\nSessooes disponiveis: ");
 
 				for (Sessao sessao : listaSessao) {
 
@@ -127,16 +126,16 @@ public class MainCompra {
 
 				for (Sessao sessao : listaSessao) {
 					if (sessaoEscolhida.equals(sessao.getCodSessao())) {
-						System.out.println("Informe a quantidade de ingressos desejados: ");
+						System.out.println("\nInforme a quantidade de ingressos desejados: ");
 						Integer ingressos = Integer.valueOf(leitura.nextLine());
 
 						int ingressosDisponivel = sessao.getQuantIngressoDisponivel() - ingressos;
 
 						if (ingressosDisponivel == 0) {
-							System.out.println("Sessão fechou");
+							System.out.println("Sessão finalizada");
 						} else {
 							if (ingressosDisponivel < 0) {
-								System.out.println("Impossivel a comprar sessao lotada");
+								System.out.println("Impossivel a compra, sessao lotada!");
 								break;
 							} else {
 								System.out.println("Ingressos ainda disponivel : " + ingressosDisponivel);
@@ -144,17 +143,21 @@ public class MainCompra {
 
 						}
 
-						if (ingressos >= 1) { // deixar bonito
+						if (ingressos >= 1) {
 
-							System.out.println("\nTipos de ingressos: \n");
+							System.out.println("\n============================================\n");
 
-							System.out.println("Quantidade de Meia: \n");
+							System.out.println("Tipos de ingressos: \n");
+
+							System.out.println("Quantidade de Meia Entrada: ");
 							Integer meia = Integer.valueOf(leitura.nextLine());
 
-							System.out.println("Quantidade de Inteira: \n");
+							System.out.println("\nQuantidade de Entrada Inteira: ");
 							Integer inteira = Integer.valueOf(leitura.nextLine());
 
 							if ((inteira + meia) > ingressos || (inteira + meia) == 0) {
+
+								System.out.println("Soma dos tipos nao corresponde a quantidade dos ingressos\n");
 								break;
 							}
 
@@ -171,12 +174,16 @@ public class MainCompra {
 
 							int total = valorMeia + valorInteira;
 
-							System.out.println("Valor total: R$" + total);
+							System.out.println("\nValor total: R$" + total);
 
-							System.out.println("\nForma de pagamento: "); // deixar bonito
+							System.out.println("\n============================================\n");
+
+							System.out.println("\nForma de pagamento: ");
 
 							System.out.println("1 - Cartao de debito");
 							System.out.println("2 - Cartao de credito");
+
+							System.out.println("Forma escolhida: ");
 
 							Integer pagamento = Integer.valueOf(leitura.nextLine());
 
@@ -186,34 +193,21 @@ public class MainCompra {
 
 							}
 
-							if (pagamento == 1) {
-								System.out.println("\nNumero do cartao: ");
+							if (pagamento == 1 || pagamento == 2) {
+								System.out.println("\n- Numero do cartao: ");
 								Long numCartao = Long.valueOf(leitura.nextLine());
 
-								System.out.println("\nData de validade: (MMAA)");
+								System.out.println("\n- Data de validade: (MMAA)");
 								Integer validade = Integer.valueOf(leitura.nextLine());
 
 								System.out.println("\nCVV: ");
 								Integer cvv = Integer.valueOf(leitura.nextLine());
 
-								System.out.println("\nNome no cartao: ");
-								String nome = String.valueOf(leitura.nextLine());
-
-							} else if (pagamento == 2) {
-								System.out.println("\nNumero do cartao: ");
-								Long numCartao = Long.valueOf(leitura.nextLine());
-
-								System.out.println("\nData de validade: (MMAA)");
-								Integer validade = Integer.valueOf(leitura.nextLine());
-
-								System.out.println("\nCVV: ");
-								Integer cvv = Integer.valueOf(leitura.nextLine());
-
-								System.out.println("\nNome no cartao: ");
+								System.out.println("\n- Nome no cartao: ");
 								String nome = String.valueOf(leitura.nextLine());
 
 							} else {
-								System.out.println("Forma incorreta de pagamento.");
+								System.out.println("Forma incorreta de pagamento!");
 								break;
 							}
 
@@ -224,8 +218,8 @@ public class MainCompra {
 							int n = 1;
 
 							for (int i = quantIngressos; i < ingressos; i++) {
-								System.out.println("Compra feita. codigo do ingresso " + n + " e: "
-										+ (ingresso.getCodIngresso() + quantIngressos));
+								System.out.println("Compra realizada com sucesso. O codigo do ingresso " + n + " e: "
+										+ (ingresso.getCodIngresso() + quantIngressos) + "\n");
 								quantIngressos++;
 								n++;
 							}
@@ -238,12 +232,16 @@ public class MainCompra {
 			}
 			case 4: {
 
-				System.out.println("Informe o codigo do ingresso: ");
+				System.out.println("- Informe o codigo do ingresso para o cancelamento: ");
 				Integer cancela = Integer.valueOf(leitura.nextLine());
+				
 				if (bancoIngresso.excluir(cancela)) {
-					// Deu certo
+					System.out.println("Compra cancelada com sucesso.");
+					
 				} else {
-					// Deu pau
+					System.out.println("Cancelamento invalido.");
+					
+					
 				}
 
 			}
@@ -251,8 +249,6 @@ public class MainCompra {
 			}
 
 		}
-
-		// fim while
 
 	}
 
